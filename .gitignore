@@ -3,3 +3,4 @@ __pycache__/
 .idea/
 *.xlsx
 *.csv
+report_log.txt
