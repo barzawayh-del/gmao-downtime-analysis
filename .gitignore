@@ -4,3 +4,5 @@ __pycache__/
 *.xlsx
 *.csv
 report_log.txt
+pipeline.log*
+pipeline.log*
