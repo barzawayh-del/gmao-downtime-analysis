@@ -5,4 +5,3 @@ __pycache__/
 *.csv
 report_log.txt
 pipeline.log*
-pipeline.log*
