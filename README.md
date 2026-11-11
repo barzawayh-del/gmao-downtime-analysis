@@ -29,10 +29,10 @@ Email credentials are read from environment variables, never from the code:
 python run_pipeline.py
 ```
 
-## Schedule (Windows, weekdays at 19:30)
+## Schedule (Windows, weekdays at 21:00)
 
 ```bash
-schtasks /create /tn "GMAOReport" /tr "C:\path\to\run_report.bat" /sc weekly /d MON,TUE,WED,THU,FRI /st 19:30
+schtasks /create /tn "GMAOReport" /tr "C:\path\to\run_report.bat" /sc weekly /d MON,TUE,WED,THU,FRI /st 21:00
 ```
 
 ## Metrics
