@@ -42,3 +42,6 @@ schtasks /create /tn "GMAOReport" /tr "C:\path\to\run_report.bat" /sc weekly /d 
 ## Limitations
 - Runs only when the computer is on and the user is logged in.
 - Small sample data: use the numbers to learn the method, not to take decisions.
+## ML experiment (learning exercise)
+- `ml_day1.py` trains a Random Forest to predict downtime from machine and cause, compared with a median baseline, a shuffled-target check, and 5-fold cross-validation.
+- The data is **synthetic** with a planted pattern: results show the method works, not anything about a real plant.
