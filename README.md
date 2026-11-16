@@ -45,3 +45,9 @@ schtasks /create /tn "GMAOReport" /tr "C:\path\to\run_report.bat" /sc weekly /d 
 ## ML experiment (learning exercise)
 - `ml_day1.py` trains a Random Forest to predict downtime from machine and cause, compared with a median baseline, a shuffled-target check, and 5-fold cross-validation.
 - The data is **synthetic** with a planted pattern: results show the method works, not anything about a real plant.
+
+
+### Findings (synthetic data, 10-fold CV)
+- Metric choice matters: a forest trained on squared error wins on RMSE (47.0 vs 50.3 for the mean baseline) but not on MAE against the median baseline (32.1 vs 31.9).
+- The same forest trained on absolute error wins on MAE (30.3 vs 31.9), about 5 percent.
+- Gains are small because noise dominates; a single train/test split overstated them.
