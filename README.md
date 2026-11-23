@@ -51,3 +51,4 @@ schtasks /create /tn "GMAOReport" /tr "C:\path\to\run_report.bat" /sc weekly /d 
 - Metric choice matters: a forest trained on squared error wins on RMSE (47.0 vs 50.3 for the mean baseline) but not on MAE against the median baseline (32.1 vs 31.9).
 - The same forest trained on absolute error wins on MAE (30.3 vs 31.9), about 5 percent.
 - Gains are small because noise dominates; a single train/test split overstated them.
+- Per-fold check: the absolute-error forest beat the median baseline in 9 of 10 folds (mean MAE gain 1.5 min, std 1.1), so the small gain is consistent but still modest.

@@ -39,3 +39,13 @@ for name, estimator in candidates.items():
         "RMSE": round(-res["test_RMSE"].mean(), 1),
     })
 print(pd.DataFrame(rows).to_string(index=False))
+# Paired per-fold comparison: does the absolute-error forest beat the median baseline?
+fold_scores = {}
+for name in ["baseline median", "forest (absolute error)"]:
+    res = cross_validate(candidates[name], X, y, cv=cv, scoring=metrics)
+    fold_scores[name] = -res["test_MAE"]
+
+diff = fold_scores["baseline median"] - fold_scores["forest (absolute error)"]
+print("\nPer-fold MAE gain (positive = forest better):", diff.round(1))
+print("Folds won:", int((diff > 0).sum()), "of", len(diff))
+print("Mean gain:", round(diff.mean(), 2), "| std:", round(diff.std(), 2))
